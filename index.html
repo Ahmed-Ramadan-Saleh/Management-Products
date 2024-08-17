@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CRUDS: Create, Read, Update, Delete, Search">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <div class="header">
+            <h2>Product Management</h2>
+            <p>CRUD Application</p>
+        </div>
+
+        <div class="inputs">
+            <input id="title" type="text" placeholder="Product Title">
+            <div class="price" >
+                <input onkeyup="gettotal()" id="price" type="number" placeholder="Price">
+                <input onkeyup="gettotal()" id="taxes" type="number" placeholder="Taxes">
+                <input onkeyup="gettotal()" id="ads" type="number" placeholder="Ads">
+                <input onkeyup="gettotal()" id="discount" type="number" placeholder="Discount">
+                <small id="total"></small>
+            </div>
+            <input id="count" type="number" placeholder="Count">
+            <input id="category" type="text" placeholder="Category">
+            <button id="submit">Create Product</button>
+        </div>
+
+        <div class="outputs">
+            <div class="searchblock">
+                <input onkeyup="searchdata(this.value)" id="search" type="text" placeholder="Search Products">
+                <div class="btnsearch">
+                    <button id="searchtitle" onclick="getsearchmood(this.id)">Search by Title</button>
+                    <button id="searchcategory" onclick="getsearchmood(this.id)">Search by Category</button>
+                </div>
+            </div>
+            <div id="deleteall" class="table-container"></div>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Light/Dark Mode Toggle Icon -->
+    <div id="mode-toggle" onclick="toggleMode()">🌙</div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
